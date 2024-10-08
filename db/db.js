@@ -6,10 +6,7 @@ async function connectDB() {
   if (dbInstance) return dbInstance;
 
   try {
-    dbInstance = await mongoose.connect(process.env.MONGO_DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    dbInstance = await mongoose.connect(process.env.MONGO_DB);
     console.log("DB Connection successful");
     return dbInstance;
   } catch (error) {
